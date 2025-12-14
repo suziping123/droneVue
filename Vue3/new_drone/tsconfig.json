@@ -10,5 +10,11 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  }
 }
