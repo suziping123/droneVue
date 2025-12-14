@@ -2,7 +2,7 @@
  * @Author: suziping123 3268845120@qq.com
  * @Date: 2025-12-14 13:38:36
  * @LastEditors: suziping123 3268845120@qq.com
- * @LastEditTime: 2025-12-14 19:52:46
+ * @LastEditTime: 2025-12-14 20:01:23
  * @FilePath: \droneVue\new_drone\src\views\Home.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -177,7 +177,7 @@ export default defineComponent({
     });
 
     const currentTraffic = reactive<TrafficInfo>({
-      status: '--',
+      status: '--',//状态
       congestions: []
     });
 
@@ -577,7 +577,7 @@ export default defineComponent({
       map.value.setCenter(position);
     };
 
-    const handleMapClick = (e: any) => {
+    const handleMapClick = (e: any) => {// 鼠标点击地图事件处理函数
       const lnglat = e.lnglat;
 
       geocoder.value.getAddress(lnglat, (status: string, result: any) => {
@@ -615,7 +615,7 @@ export default defineComponent({
 
         const traffic = getTrafficData();
         if (traffic) {
-          Object.assign(currentTraffic, traffic);
+          Object.assign(currentTraffic, traffic);// 更新当前交通信息
         } else {
           Object.assign(currentTraffic, {
             status: '--',
